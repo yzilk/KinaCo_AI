@@ -1,0 +1,10 @@
+# Xcode
+build/
+*.xcuserstate
+*.xcuserdatad
+
+# Security (今回の本番)
+Configuration.xcconfig
+
+# OS generated files
+.DS_Store
