@@ -1,19 +1,28 @@
-KinaCo (きなこ)
+<div align>
+  
+# `KinaCo (きなこ)`
+<p align="center">
+  <kbd>AWS Cognito</kbd> ; <kbd>SwiftUI</kbd> ; <kbd>AI Logic</kbd>
+</p>
+
+---
+</div>
+
+## 🔗 Overview
 KinaCo は、AIチャットアプリです。AWS Cognitoによる認証と、AWS Lambdaを介したAIチャットロジックを統合しています。
 
-特徴
-🔐 Secure Auth: AWS Cognito Identity Providerを使用した堅牢なユーザー認証。
-💬 AI Chat: AWSサービスと連携したリアルタイムなAIチャットボット機能。
-📱 SwiftUI Native: 最新のSwiftUI API（@Observable, NavigationStackなど）を使用したスムーズなUI。
-🎨 Modern Design: ピンクを基調とした、ファンコミュニティらしいモダンで親しみやすいデザイン。
+## 🛠️ Tech Stack & Security
+* **Auth**: `AWS_COGNITO_IDP` (USER_PASSWORD_AUTH)
+* **Core**: `SwiftUI` + `Combine` (@Observable)
+* **API**: `REST_API_GATEWAY` / `LAMBDA_EXECUTOR`
 
-技術スタック
-Frontend: SwiftUI (iOS 17+)
-Backend: AWS Cognito, AWS Lambda (via API Gateway)
-Architecture: MVVM + Manager Pattern (Separation of Concerns)
+## 📂 Project Structure
+```
+.
+KinaCo/
+├── Models/          # データ構造 (Message.swift など)
+├── ViewModels/      # ビジネスロジック (AppViewModel.swift など)
+├── Views/           # UIコンポーネント (LoginView, ChatView など)
+├── Managers/        # 外部サービス連携 (AuthManager.swift など)
+└── Networking/      # API通信クラス (KinaCoAPI.swift)
 
-環境変数の設定
-プロジェクトの Config.xcconfig（または Info.plist）に以下のキーを設定してください。
-・AWS_REGION: 使用するAWSリージョン (例: us-east-1)
-・COGNITO_CLIENT_ID: AWS CognitoのアプリクライアントID
-・API_BASE_URL: KinaCo API（Lambda）のエンドポイントURL
