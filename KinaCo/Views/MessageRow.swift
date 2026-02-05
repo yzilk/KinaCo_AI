@@ -2,8 +2,6 @@
 //  Message.swift
 //  KinaCo
 //
-//  Created by Yugo Noji on 2026/01/30.
-//
 import SwiftUI
 
 struct MessageRow: View {
@@ -12,13 +10,11 @@ struct MessageRow: View {
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
             if !message.isUser {
-                // KinaCoのアイコン
                 iconView
             } else {
                 Spacer(minLength: 50)
             }
             
-            // 吹き出し
             bubbleText
             
             if !message.isUser {
@@ -28,7 +24,6 @@ struct MessageRow: View {
         .padding(.horizontal, 8)
     }
     
-    // アイコン部分を切り出して見やすく
     private var iconView: some View {
         KinacoFaceView()
             .frame(width: 45, height: 45)
@@ -37,14 +32,32 @@ struct MessageRow: View {
             .overlay(Circle().stroke(Color.gray.opacity(0.3), lineWidth: 1))
     }
     
-    // 吹き出し部分を切り出して見やすく
+  
     private var bubbleText: some View {
         Text(message.text)
             .padding(.horizontal, 14)
             .padding(.vertical, 10)
-            .background(message.isUser ? Color.blue : Color(.systemGray5))
-            .foregroundColor(message.isUser ? .white : .primary)
-        // 💡 ユーザー側かAI側かで角丸の形を変えるとよりチャットらしくなります
+            .background(
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(
+                        LinearGradient(
+                            gradient: Gradient(colors: [
+                                Color(hex: "E0C3FC"),
+                                Color(hex: "FF9A9E")
+                            ]),
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+                    .shadow(
+                        color: Color.black.opacity(0.15),
+                        radius: 8,
+                        x: 0,
+                        y: 4
+                    )
+            )
+            .foregroundColor(message.isUser ? .white : .black)
+            .cornerRadius(16)
             .clipShape(
                 RoundedCorner(
                     radius: 18,
@@ -58,7 +71,6 @@ struct MessageRow: View {
     }
 }
 
-// 💡 特定の角だけ丸くするための便利なカスタム形状
 struct RoundedCorner: Shape {
     var radius: CGFloat = .infinity
     var corners: UIRectCorner = .allCorners

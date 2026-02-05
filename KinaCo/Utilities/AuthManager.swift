@@ -2,8 +2,6 @@
 //  AnthManager.swift
 //  KinaCo
 //
-//  Created by Yugo Noji on 2026/01/18.
-//
 import Foundation
 import SwiftUI
 
@@ -13,9 +11,14 @@ class AuthManager {
     var idToken: String? = nil
     
     private var region: String {
-        Bundle.main.object(forInfoDictionaryKey: "AWS_REGION") as? String ?? "us-east-1"
+        Bundle.main
+            .object(
+                forInfoDictionaryKey: "AWS_REGION"
+            ) as? String ?? "us-east-1"
     }
-    private let clientId = Bundle.main.object(forInfoDictionaryKey: "COGNITO_CLIENT_ID") as? String ?? ""
+    private let clientId = Bundle.main.object(
+        forInfoDictionaryKey: "COGNITO_CLIENT_ID"
+    ) as? String ?? ""
     
     
     @MainActor
