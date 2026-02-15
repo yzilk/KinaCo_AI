@@ -7,15 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		620D92312F424CBB0022C2A3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620D92302F424CBB0022C2A3 /* WidgetKit.framework */; };
+		620D92332F424CBB0022C2A3 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620D92322F424CBB0022C2A3 /* SwiftUI.framework */; };
+		620D924C2F425F390022C2A3 /* KinacoLiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 620D922F2F424CBB0022C2A3 /* KinacoLiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		62BAFA4A2F2BC30100AF53B5 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 62BAFA492F2BC2F800AF53B5 /* Configuration.xcconfig */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		620D924D2F425F390022C2A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62EB53722F1D198B0086A816 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 620D922E2F424CBB0022C2A3;
+			remoteInfo = KinacoLiveActivityExtension;
+		};
+		620D92502F425F410022C2A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62EB53722F1D198B0086A816 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 620D922E2F424CBB0022C2A3;
+			remoteInfo = KinacoLiveActivityExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		620D924F2F425F390022C2A3 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				620D924C2F425F390022C2A3 /* KinacoLiveActivityExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		620D922F2F424CBB0022C2A3 /* KinacoLiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KinacoLiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		620D92302F424CBB0022C2A3 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		620D92322F424CBB0022C2A3 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		62BAFA492F2BC2F800AF53B5 /* Configuration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configuration.xcconfig; sourceTree = "<group>"; };
 		62EB537A2F1D198B0086A816 /* KinaCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinaCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		620D92422F424CBC0022C2A3 /* Exceptions for "KinacoLiveActivity" folder in "KinacoLiveActivityExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 620D922E2F424CBB0022C2A3 /* KinacoLiveActivityExtension */;
+		};
+		620D92492F424FDD0022C2A3 /* Exceptions for "KinacoLiveActivity" folder in "KinaCo" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				KinacoAttributes.swift,
+			);
+			target = 62EB53792F1D198B0086A816 /* KinaCo */;
+		};
 		62D6642C2F2A6CEB00BD78C2 /* Exceptions for "KinaCo" folder in "KinaCo" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -26,6 +77,15 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		620D92342F424CBB0022C2A3 /* KinacoLiveActivity */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				620D92492F424FDD0022C2A3 /* Exceptions for "KinacoLiveActivity" folder in "KinaCo" target */,
+				620D92422F424CBC0022C2A3 /* Exceptions for "KinacoLiveActivity" folder in "KinacoLiveActivityExtension" target */,
+			);
+			path = KinacoLiveActivity;
+			sourceTree = "<group>";
+		};
 		62EB537C2F1D198B0086A816 /* KinaCo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -37,6 +97,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		620D922C2F424CBB0022C2A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				620D92332F424CBB0022C2A3 /* SwiftUI.framework in Frameworks */,
+				620D92312F424CBB0022C2A3 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		62EB53772F1D198B0086A816 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -52,6 +121,7 @@
 			children = (
 				62BAFA492F2BC2F800AF53B5 /* Configuration.xcconfig */,
 				62EB537C2F1D198B0086A816 /* KinaCo */,
+				620D92342F424CBB0022C2A3 /* KinacoLiveActivity */,
 				62EB53892F1D218A0086A816 /* Frameworks */,
 				62EB537B2F1D198B0086A816 /* Products */,
 			);
@@ -61,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				62EB537A2F1D198B0086A816 /* KinaCo.app */,
+				620D922F2F424CBB0022C2A3 /* KinacoLiveActivityExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,6 +139,8 @@
 		62EB53892F1D218A0086A816 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				620D92302F424CBB0022C2A3 /* WidgetKit.framework */,
+				620D92322F424CBB0022C2A3 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -75,6 +148,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		620D922E2F424CBB0022C2A3 /* KinacoLiveActivityExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 620D923F2F424CBC0022C2A3 /* Build configuration list for PBXNativeTarget "KinacoLiveActivityExtension" */;
+			buildPhases = (
+				620D922B2F424CBB0022C2A3 /* Sources */,
+				620D922C2F424CBB0022C2A3 /* Frameworks */,
+				620D922D2F424CBB0022C2A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				620D92342F424CBB0022C2A3 /* KinacoLiveActivity */,
+			);
+			name = KinacoLiveActivityExtension;
+			packageProductDependencies = (
+			);
+			productName = KinacoLiveActivityExtension;
+			productReference = 620D922F2F424CBB0022C2A3 /* KinacoLiveActivityExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		62EB53792F1D198B0086A816 /* KinaCo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 62EB53852F1D198C0086A816 /* Build configuration list for PBXNativeTarget "KinaCo" */;
@@ -82,10 +177,13 @@
 				62EB53762F1D198B0086A816 /* Sources */,
 				62EB53772F1D198B0086A816 /* Frameworks */,
 				62EB53782F1D198B0086A816 /* Resources */,
+				620D924F2F425F390022C2A3 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				620D924E2F425F390022C2A3 /* PBXTargetDependency */,
+				620D92512F425F410022C2A3 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				62EB537C2F1D198B0086A816 /* KinaCo */,
@@ -104,9 +202,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2600;
+				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
+					620D922E2F424CBB0022C2A3 = {
+						CreatedOnToolsVersion = 26.2;
+					};
 					62EB53792F1D198B0086A816 = {
 						CreatedOnToolsVersion = 26.0;
 					};
@@ -131,11 +232,19 @@
 			projectRoot = "";
 			targets = (
 				62EB53792F1D198B0086A816 /* KinaCo */,
+				620D922E2F424CBB0022C2A3 /* KinacoLiveActivityExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		620D922D2F424CBB0022C2A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		62EB53782F1D198B0086A816 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,6 +256,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		620D922B2F424CBB0022C2A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		62EB53762F1D198B0086A816 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,7 +272,82 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		620D924E2F425F390022C2A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 620D922E2F424CBB0022C2A3 /* KinacoLiveActivityExtension */;
+			targetProxy = 620D924D2F425F390022C2A3 /* PBXContainerItemProxy */;
+		};
+		620D92512F425F410022C2A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 620D922E2F424CBB0022C2A3 /* KinacoLiveActivityExtension */;
+			targetProxy = 620D92502F425F410022C2A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		620D92402F424CBC0022C2A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 797L7C9XK6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KinacoLiveActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KinacoLiveActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bbitbear.KinaCo.KinacoLiveActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		620D92412F424CBC0022C2A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 797L7C9XK6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KinacoLiveActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KinacoLiveActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bbitbear.KinaCo.KinacoLiveActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		62EB53832F1D198C0086A816 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -210,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -268,7 +459,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -290,11 +481,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KinaCo/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,11 +516,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KinaCo/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -347,6 +542,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		620D923F2F424CBC0022C2A3 /* Build configuration list for PBXNativeTarget "KinacoLiveActivityExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				620D92402F424CBC0022C2A3 /* Debug */,
+				620D92412F424CBC0022C2A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		62EB53752F1D198B0086A816 /* Build configuration list for PBXProject "KinaCo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

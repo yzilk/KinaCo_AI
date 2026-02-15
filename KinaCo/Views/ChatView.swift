@@ -4,6 +4,7 @@ struct ChatView: View {
     @Environment(AuthManager.self) private var authManager
     @StateObject private var viewModel = ChatViewModel()
     @State private var isShowingLogin = false
+    @Environment(\.scenePhase) var scenePhase
     
     var body: some View {
         NavigationStack {
@@ -47,6 +48,13 @@ struct ChatView: View {
             }
             .sheet(isPresented: $isShowingLogin) {
                 LoginView()
+            }
+            .onChange(of: scenePhase) { newPhase in
+                if newPhase == .background {
+                    // アプリが「バックグラウンド（ホーム画面）」に回った瞬間に実行！
+                    print("🏠 ホームに戻ったのでキナコを呼びます")
+                    viewModel.startKinaco()
+                }
             }
         }
     }

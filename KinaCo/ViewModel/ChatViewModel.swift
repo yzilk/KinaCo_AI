@@ -4,7 +4,7 @@
 //
 import SwiftUI
 import Combine
-
+import ActivityKit
 
 class ChatViewModel: ObservableObject {
     @Published var messageText = ""
@@ -43,4 +43,25 @@ class ChatViewModel: ObservableObject {
         }
     }
     
+}
+extension ChatViewModel {
+    func startKinaco() {
+        // 👇 これを追加して、全体を囲む
+        if #available(iOS 16.2, *) {
+            print("🛠 startKinacoが呼ばれました")
+            
+            let attributes = KinacoAttributes(title: "集中タイム")
+            let initialState = KinacoAttributes.ContentState(message: "30分だけ集中しません？")
+            let content = ActivityContent(state: initialState, staleDate: nil)
+            
+            do {
+                let activity = try Activity.request(attributes: attributes, content: content)
+                print("✅ 成功！ID: \(activity.id)")
+            } catch {
+                print("❌ エラー: \(error.localizedDescription)")
+            }
+        } else {
+            print("⚠️ このiOSバージョンではLive Activityは使えません")
+        }
+    }
 }
