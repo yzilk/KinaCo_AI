@@ -26,27 +26,50 @@ struct KinacoLiveActivityWidget: Widget {
             
         } dynamicIsland: { context in
             DynamicIsland {
+                // 長押しで広がった時
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("🐶")
-                        .font(.title)
-                }
-                DynamicIslandExpandedRegion(.trailing) {
-                    Text("AI")
-                        .font(.caption)
+                    Image("eye_open")
+                        .resizable()
+                        .scaledToFit() // 👈 Fitに変えることで全体を表示
+                        .padding(2)    // 👈 少し余白を作って円の中に収める
+                        .frame(width: 26, height: 26)
+                        .background(Color.white)
+                        .clipShape(Circle())
+                        .overlay(
+                            Circle().stroke(Color.black, lineWidth: 1.5) // 👈 黒い縁取りに変更
+                        )
                 }
                 DynamicIslandExpandedRegion(.center) {
                     Text(context.state.message)
-                        .font(.caption)
                         .foregroundColor(.orange)
                 }
             } compactLeading: {
-                Text("🐶")
+                Image("eye_open")
+                    .resizable()
+                    .scaledToFit() // 👈 Fitに変えることで全体を表示
+                    .padding(2)    // 👈 少し余白を作って円の中に収める
+                    .frame(width: 26, height: 26)
+                    .background(Color.white)
+                    .clipShape(Circle())
+                    .overlay(
+                        Circle().stroke(Color.black, lineWidth: 1.5) // 👈 黒い縁取りに変更
+                    )
             } compactTrailing: {
                 Text("AI")
-                    .font(.caption2)
             } minimal: {
-                Text("🐶")
+                // 最小状態
+                Image("eye_open")
+                    .resizable()
+                    .scaledToFit() // 👈 Fitに変えることで全体を表示
+                    .padding(2)    // 👈 少し余白を作って円の中に収める
+                    .frame(width: 26, height: 26)
+                    .background(Color.white)
+                    .clipShape(Circle())
+                    .overlay(
+                        Circle().stroke(Color.black, lineWidth: 1.5) // 👈 黒い縁取りに変更
+                    )
             }
         }
     }
 }
+

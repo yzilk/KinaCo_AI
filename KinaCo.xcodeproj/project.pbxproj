@@ -67,6 +67,13 @@
 			);
 			target = 62EB53792F1D198B0086A816 /* KinaCo */;
 		};
+		620D92E02F4275C00022C2A3 /* Exceptions for "KinaCo" folder in "KinacoLiveActivityExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				App/Assets.xcassets,
+			);
+			target = 620D922E2F424CBB0022C2A3 /* KinacoLiveActivityExtension */;
+		};
 		62D6642C2F2A6CEB00BD78C2 /* Exceptions for "KinaCo" folder in "KinaCo" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -90,6 +97,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				62D6642C2F2A6CEB00BD78C2 /* Exceptions for "KinaCo" folder in "KinaCo" target */,
+				620D92E02F4275C00022C2A3 /* Exceptions for "KinaCo" folder in "KinacoLiveActivityExtension" target */,
 			);
 			path = KinaCo;
 			sourceTree = "<group>";
