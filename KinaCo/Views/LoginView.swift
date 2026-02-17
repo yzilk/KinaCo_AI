@@ -50,6 +50,9 @@ struct LoginView: View {
                 Button(action: {
                     Task {
                         await authManager.signIn(username: email, password: password)
+                        if authManager.isSignedIn {
+                            dismiss()
+                        }
                     }
                 }) {
                     Text("Login")
@@ -68,9 +71,19 @@ struct LoginView: View {
                 }
             }
             .padding(.horizontal, 30)
-            
             Spacer()
         }
         .background(Color.white)
+        .onAppear {
+            if KeychainHelper.standard.read(account: "kinaco-id-token") != nil {
+                Task {
+                    try? await Task.sleep(nanoseconds: 800_000_000)
+                    await authManager.checkFaceIDAndLogin()
+                    if authManager.isSignedIn {
+                        dismiss()
+                    }
+                }
+            }
+        }
     }
 }

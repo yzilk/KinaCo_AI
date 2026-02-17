@@ -10,5 +10,7 @@
 	<string>$(LAMBDA_URL)</string>
 	<key>NSSupportsLiveActivities</key>
 	<true/>
+	<key>NSFaceIDUsageDescription</key>
+	<string>セッション情報を安全に呼び出すためにFace IDを使用します。</string>
 </dict>
 </plist>

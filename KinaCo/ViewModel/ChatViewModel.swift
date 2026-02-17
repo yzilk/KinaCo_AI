@@ -35,9 +35,8 @@ class ChatViewModel: ObservableObject {
     }
     @MainActor
     func sendMessage(authManager: AuthManager) async {
-        // 1. トークンを authManager から取り出す
         guard let token = authManager.idToken else {
-            print("🚨 トークンがないよ！ログインしてね。")
+            print("トークンがないよ！ログインしてね。")
             return
         }
         
@@ -50,20 +49,16 @@ class ChatViewModel: ObservableObject {
         messageText = ""
         messages.append(Message(text: "(...)", isUser: false))
         
-        // 2. APIを叩く（ここでは fetchReply を使う）
         do {
-            // ここでさっき取り出した 'token' を使う
             let reply = try await KinaCoAPI.fetchReply(
                 query: userQuery,
                 idToken: token
             )
-            
-            // 返ってきたら「(...)」を消して、キナコの返信を表示
             messages.removeLast()
             messages.append(Message(text: reply, isUser: false))
             
         } catch {
-            print("❌ エラー: \(error.localizedDescription)")
+            print("エラー： \(error.localizedDescription)")
             messages.removeLast()
             messages.append(Message(text: "エラー: \(error.localizedDescription)", isUser: false))
         }
@@ -72,7 +67,6 @@ class ChatViewModel: ObservableObject {
 }
 extension ChatViewModel {
     func startKinaco() {
-        // 👇 これを追加して、全体を囲む
         if #available(iOS 16.2, *) {
             print("🛠 startKinacoが呼ばれました")
             
@@ -82,12 +76,12 @@ extension ChatViewModel {
             
             do {
                 let activity = try Activity.request(attributes: attributes, content: content)
-                print("✅ 成功！ID: \(activity.id)")
+                print("成功！ID: \(activity.id)")
             } catch {
-                print("❌ エラー: \(error.localizedDescription)")
+                print("エラー: \(error.localizedDescription)")
             }
         } else {
-            print("⚠️ このiOSバージョンではLive Activityは使えません")
+            print("このiOSバージョンではLive Activityは使えません")
         }
     }
 }

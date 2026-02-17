@@ -4,6 +4,7 @@
 //
 import Foundation
 import SwiftUI
+import LocalAuthentication
 
 @Observable
 class AuthManager {
@@ -51,8 +52,43 @@ class AuthManager {
                let authResult = json["AuthenticationResult"] as? [String: Any],
                let token = authResult["IdToken"] as? String {
                 self.idToken = token
+                self.saveTokenToKeychain(token: token)
                 self.isSignedIn = true
             }
         } catch { print("Error: \(error)") }
+    }
+}
+extension AuthManager {
+    
+    func saveTokenToKeychain(token: String) {
+        if let data = token.data(using: .utf8) {
+            KeychainHelper.standard.save(data, account: "kinaco-id-token")
+        }
+    }
+    
+    @MainActor
+    func checkFaceIDAndLogin() async {
+        let context = LAContext()
+        var error: NSError?
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            do {
+                let success = try await context.evaluatePolicy(
+                    .deviceOwnerAuthenticationWithBiometrics,
+                    localizedReason: "KinaCoをログインするために認証してください"
+                )
+                
+                if success {
+                    if let data = KeychainHelper.standard.read(account: "kinaco-id-token"),
+                       let savedToken = String(data: data, encoding: .utf8) {
+                        self.idToken = savedToken
+                        self.isSignedIn = true
+                        print("業務ログ：Face IDで自動ログイン成功")
+                    }
+                }
+            } catch {
+                print("業務ログ：Face ID認証失敗: \(error.localizedDescription)")
+            }
+        }
     }
 }
