@@ -25,12 +25,11 @@ struct KinaCoAPI {
             
         let (data, _) = try await URLSession.shared.data(for: request)
         let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]
+        
+        // for Debug
+        if let debugString = String(data: data, encoding: .utf8) {
+            print("📄 Lambdaからの生の声: \(debugString)")
+        }
         return json?["reply"] as? String ?? "返信が空っぽだよ"
     }
-    //     KinaCoAPI.swift 内で一時的に
-    //    static func fetchReply(query: String, idToken: String?) async throws -> String {
-    //        // 通信をコメントアウトして、ダミーを返す
-    //        try? await Task.sleep(nanoseconds: 1 * 1000_000_000) // 1秒待つフリ
-    //        return "デザイン確認用のテスト返信だよ！🐥"
-    //    }
 }

@@ -9,18 +9,10 @@
 /* Begin PBXBuildFile section */
 		620D92312F424CBB0022C2A3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620D92302F424CBB0022C2A3 /* WidgetKit.framework */; };
 		620D92332F424CBB0022C2A3 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620D92322F424CBB0022C2A3 /* SwiftUI.framework */; };
-		620D924C2F425F390022C2A3 /* KinacoLiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 620D922F2F424CBB0022C2A3 /* KinacoLiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		62BAFA4A2F2BC30100AF53B5 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 62BAFA492F2BC2F800AF53B5 /* Configuration.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		620D924D2F425F390022C2A3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 62EB53722F1D198B0086A816 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 620D922E2F424CBB0022C2A3;
-			remoteInfo = KinacoLiveActivityExtension;
-		};
 		620D92502F425F410022C2A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 62EB53722F1D198B0086A816 /* Project object */;
@@ -29,20 +21,6 @@
 			remoteInfo = KinacoLiveActivityExtension;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		620D924F2F425F390022C2A3 /* Embed Foundation Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				620D924C2F425F390022C2A3 /* KinacoLiveActivityExtension.appex in Embed Foundation Extensions */,
-			);
-			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		620D922F2F424CBB0022C2A3 /* KinacoLiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KinacoLiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,12 +163,10 @@
 				62EB53762F1D198B0086A816 /* Sources */,
 				62EB53772F1D198B0086A816 /* Frameworks */,
 				62EB53782F1D198B0086A816 /* Resources */,
-				620D924F2F425F390022C2A3 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				620D924E2F425F390022C2A3 /* PBXTargetDependency */,
 				620D92512F425F410022C2A3 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
@@ -281,11 +257,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		620D924E2F425F390022C2A3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 620D922E2F424CBB0022C2A3 /* KinacoLiveActivityExtension */;
-			targetProxy = 620D924D2F425F390022C2A3 /* PBXContainerItemProxy */;
-		};
 		620D92512F425F410022C2A3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 620D922E2F424CBB0022C2A3 /* KinacoLiveActivityExtension */;

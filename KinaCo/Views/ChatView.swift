@@ -4,7 +4,7 @@ struct ChatView: View {
     @Environment(AuthManager.self) private var authManager
     @StateObject private var viewModel = ChatViewModel()
     @State private var isShowingLogin = false
-    @Environment(\.scenePhase) var scenePhase
+    @Environment(\.scenePhase) private var phase
     
     var body: some View {
         NavigationStack {
@@ -49,9 +49,8 @@ struct ChatView: View {
             .sheet(isPresented: $isShowingLogin) {
                 LoginView()
             }
-            .onChange(of: scenePhase) { newPhase in
+            .onChange(of: phase) { oldPhase, newPhase in
                 if newPhase == .background {
-                    // アプリが「バックグラウンド（ホーム画面）」に回った瞬間に実行！
                     print("🏠 ホームに戻ったのでキナコを呼びます")
                     viewModel.startKinaco()
                 }
@@ -68,8 +67,7 @@ struct ChatView: View {
             
             Button(action: {
                 Task {
-                    let token = authManager.isSignedIn ? authManager.idToken : nil
-                    await viewModel.sendMessage(idToken: token)
+                    await viewModel.sendMessage(authManager: authManager)
                 }
             }) {
                 Image(systemName: "arrow.up.circle.fill")
