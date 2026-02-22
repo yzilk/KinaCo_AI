@@ -9,7 +9,7 @@ struct KinaCoApp: App {
     @State private var authManager = AuthManager()
     var body: some Scene {
         WindowGroup {
-            ChatView()
+            AppRootView()
                 .environment(authManager)
         }
     }

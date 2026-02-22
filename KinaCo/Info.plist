@@ -6,8 +6,8 @@
 	<string>$(AWS_REGION)</string>
 	<key>COGNITO_CLIENT_ID</key>
 	<string>$(COGNITO_CLIENT_ID)</string>
-	<key>LAMBDA_URL</key>
-	<string>$(LAMBDA_URL)</string>
+	<key>KINACOAPI_URL</key>
+	<string>$(KINACOAPI_URL)</string>
 	<key>NSSupportsLiveActivities</key>
 	<true/>
 	<key>NSFaceIDUsageDescription</key>
