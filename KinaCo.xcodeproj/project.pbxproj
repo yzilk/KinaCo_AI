@@ -28,6 +28,7 @@
 		620D92322F424CBB0022C2A3 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		62BAFA492F2BC2F800AF53B5 /* Configuration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configuration.xcconfig; sourceTree = "<group>"; };
 		62EB537A2F1D198B0086A816 /* KinaCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinaCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		62EB53A02F1D198B0086A816 /* KinaCo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KinaCo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -454,12 +455,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KinaCo/KinaCo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 797L7C9XK6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KinaCo/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "セッション情報を安全に呼び出すためにFace IDを使用します。";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "「歩数データを取得して、トレーニング記録を管理するために使用します。」";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "「アプリで入力した体重データをヘルスケアに保存するために使用します。」";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -489,12 +494,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KinaCo/KinaCo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 797L7C9XK6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KinaCo/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "セッション情報を安全に呼び出すためにFace IDを使用します。";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "「歩数データを取得して、トレーニング記録を管理するために使用します。」";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "「アプリで入力した体重データをヘルスケアに保存するために使用します。」";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
